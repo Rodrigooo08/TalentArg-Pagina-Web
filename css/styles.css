@@ -60,4 +60,34 @@ input[aria-invalid=true]{border-color:#b3261e}
 .tile{background:var(--campo);border-left:6px solid var(--naranja);padding:1rem 1.2rem}
 .tile h3{font-family:var(--f-tit);margin-bottom:.4rem}
 @media (prefers-reduced-motion:no-preference){.slide-txt h1{animation:in .5s ease}@keyframes in{from{opacity:0;transform:translateY(10px)}}}
-@media (max-width:760px){.top{flex-wrap:wrap}.kiwi{display:none}.slider,.split{grid-template-columns:1fr}.main-r{padding:1.5rem}.elegir{grid-template-columns:1fr}.card,.elegir .back,.elegir .txt{grid-column:1;grid-row:auto}.elegir .txt{margin-top:0;max-width:none}.dots{left:1rem}}
+.burger{display:none;font-size:1.6rem;line-height:1;background:var(--durazno);color:var(--oscuro);border:0;border-radius:10px;width:46px;height:46px;cursor:pointer}
+@media (max-width:900px){.elegir{grid-template-columns:1fr 1.3fr}.elegir .card{grid-column:2}}
+@media (max-width:760px){
+  html{-webkit-text-size-adjust:100%}
+  .top{padding:.6rem 4vw;flex-wrap:wrap}
+  .logo{font-size:1.5rem}
+  .kiwi{display:block;height:44px;margin:0 auto 0 .8rem}
+  .burger{display:block}
+  .nav{display:none;flex-basis:100%;flex-direction:column;gap:0;border-top:2px solid var(--durazno);margin-top:.5rem}
+  .nav.open{display:flex}
+  .nav a,.dd-btn{width:100%;text-align:left;padding:.9rem .6rem;min-height:48px}
+  .dd-menu{position:static;box-shadow:none;background:transparent;padding:0 0 .4rem 1rem}
+  .slider{grid-template-columns:1fr;min-height:0}
+  .slide-txt{padding:1.4rem 1.2rem 1.6rem}
+  .slide-txt p{max-width:none}
+  .slide-img{min-height:300px}
+  .slide-img img{width:32%;max-width:150px}
+  .dots{left:1rem;bottom:1rem}
+  .split{grid-template-columns:1fr}
+  .side{padding:1rem 1.2rem 1.4rem}
+  .main-r{padding:1.2rem}
+  form{max-width:none}
+  input,select{font-size:16px;min-height:48px}
+  .btn{width:100%;min-height:48px;justify-self:stretch}
+  .elegir{grid-template-columns:1fr;padding:1rem 4vw 2rem}
+  .elegir .back,.elegir .txt,.elegir .card{grid-column:1;grid-row:auto}
+  .elegir .txt{margin-top:0;max-width:none}
+  .card{padding:1rem}.card h1{font-size:1.6rem}
+  .info{padding:1.6rem 5vw}.info h1{font-size:2rem}
+}
+@media (max-width:380px){.logo{font-size:1.3rem}.kiwi{display:none}.roles{gap:.6rem}}

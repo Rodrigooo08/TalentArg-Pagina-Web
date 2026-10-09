@@ -141,7 +141,11 @@
       if (open) { dd.classList.add("open"); b.setAttribute("aria-expanded", "true"); }
     });
   });
-  document.addEventListener("click", function () { Array.prototype.forEach.call(document.querySelectorAll(".dd"), function (d) { d.classList.remove("open"); }); });
+  document.addEventListener("click", function (e) { if (window.matchMedia("(max-width:760px)").matches && e.target.closest && e.target.closest(".nav")) return; Array.prototype.forEach.call(document.querySelectorAll(".dd"), function (d) { d.classList.remove("open"); }); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") document.dispatchEvent(new Event("click")); });
+  var burger = document.querySelector(".burger"), nav = document.getElementById("nav");
+  function closeNav() { nav.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); }
+  burger.addEventListener("click", function (e) { e.stopPropagation(); var o = nav.classList.toggle("open"); burger.setAttribute("aria-expanded", o); });
+  window.addEventListener("hashchange", closeNav);
   route();
 })();
